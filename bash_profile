@@ -7,6 +7,8 @@ SI="\[\033[0;33m\]" #this is for the current directory
 IN="\[\033[0m\]"
  
 export PS1="$NM[ $HI\u $HII\h $SI\w$NM ] $IN"
+unset NM HI HII SI IN
+
 export EDITOR='gvim -f --nomru -c "au VimLeave * !open -a Terminal"'
  
 if [ "$TERM" != "dumb" ]; then

@@ -16,4 +16,6 @@ alias l='gls $LS_OPTIONS -lAhF'
 # cd aliases
 alias ..="cd .."
 alias ...="cd ../.."
-alias cdg='cd $HOME/.github'
+alias cdsm='cd $HOME/.setup-mac'
+
+source $HOME/.aliases

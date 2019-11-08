@@ -1,5 +1,5 @@
 #!/bin/bash
-# File is mainained in ~/.mercurial/profile/setup_mac
+# File is mainained in ~/.setup-mac/setup_mac
 
 ###############################
 # Setup user environment on Mac
@@ -7,26 +7,23 @@
 
 # * Homebrew
 # Packet manager for non-standard mac applications
-# Requires Xcode?
-# Pulls in mercurial, macvim, hyper etc.
+# Requires Xcode updated for current version of iOS
+# Pulls in macvim and hyper etc.
 
-# * git and mercurial local repos (~/.mercurial and ~/.git)
 # Created and populated with additional modules
-# ~/.mercurial/profile repo contains setup files for gvim (MacVim) and
+# ~/.setup-mac repo contains setup files for gvim (MacVim) and
 # the Hyper terminal application. These setups/plugins will be linked in
-# from the user' homedir.
+# from the user's homedir.
 
 # * Hyper is a highly user-configurble terminal with a built-in plugin manager
 # To customize hyper, start it, select Plugins > 'Install Hyper CLI command in PATH'
 # and then write: 'hyper help'
 
 # * MacVim (gvim) is set up with the Vundle plugin manager
-# File is mainained in mercurial/profile/mac_setup.sh
 
 # Both Hyper and MacVim is set up to use the solarized theme with the IBM Plex Mono font
-# This should be downloded into ~/.github/plex, and must be added to the Mac's 
+# This should be downloded into ~/.setup-mac/plex, and must be added to the Mac's 
 # font registry using the fontbook app.
-
 
 # Get Homebrew packet manager itself
 BREW=/usr/local/bin/brew
@@ -72,7 +69,7 @@ ln -sf $SETUP_MAC/dircolors-solarized/dircolors.ansi-light $HOME/.dir_colors
 
 echo -e "* Install the IBM Plex Mono font from '$SETUP_MAC/plex'"
 echo -e "* using the Mac's fontbook utility\n"
-[ -e $SETUP_MAC/plex ]      || git clone https://github.com/IBM/plex/releases $SETUP_MAC/plex
+[ -e $SETUP_MAC/plex ]      || git clone https://github.com/IBM/plex $SETUP_MAC/plex
 
 # Create links to files in this dir in $HOME
 # Require access to geinov@noven.no mercurial repo
@@ -80,5 +77,6 @@ echo -e "* using the Mac's fontbook utility\n"
 ln -sf $SETUP_MAC/bash_profile $HOME/.bash_profile
 ln -sf $SETUP_MAC/vimrc $HOME/.vimrc
 ln -sf $SETUP_MAC/gvimrc $HOME/.gvimrc
+ln -sf $SETUP_MAC/gitconfig $HOME/.gitconfig
 echo -e "* Open gvim and run :PluginInstall\n"
 ln -sf $SETUP_MAC/hyper.js $HOME/.hyper.js
