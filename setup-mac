@@ -1,29 +1,6 @@
 #!/bin/bash
-# File is mainained in ~/.setup-mac/setup_mac
+# File is mainained in ~/.setup-mac/setup-mac
 
-###############################
-# Setup user environment on Mac
-###############################
-
-# * Homebrew
-# Packet manager for non-standard mac applications
-# Requires Xcode updated for current version of iOS
-# Pulls in macvim and hyper etc.
-
-# Created and populated with additional modules
-# ~/.setup-mac repo contains setup files for gvim (MacVim) and
-# the Hyper terminal application. These setups/plugins will be linked in
-# from the user's homedir.
-
-# * Hyper is a highly user-configurble terminal with a built-in plugin manager
-# To customize hyper, start it, select Plugins > 'Install Hyper CLI command in PATH'
-# and then write: 'hyper help'
-
-# * MacVim (gvim) is set up with the Vundle plugin manager
-
-# Both Hyper and MacVim is set up to use the solarized theme with the IBM Plex Mono font
-# This should be downloded into ~/.setup-mac/plex, and must be added to the Mac's 
-# font registry using the fontbook app.
 
 # Get Homebrew packet manager itself
 BREW=/usr/local/bin/brew
@@ -36,7 +13,7 @@ fi
 
 # Get Homebrew command-line and graphical utilities (via cask)
 HOMEBREW_MODULES="coreutils mercurial macvim sshpass"
-HOMEBREW_CASKS="hyper"
+HOMEBREW_CASKS="hyper fluor"
 
 for module in $HOMEBREW_MODULES; do
    brew install $module

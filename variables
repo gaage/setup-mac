@@ -1,1 +1,3 @@
-export GEOS_DIR=/usr/local/Cellar/geos/3.6.1
+
+
+[ -e $HOME/.variables ] && source $HOME/.variables

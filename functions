@@ -1,0 +1,33 @@
+# Functions to ease the initialization of new gitrepo on
+# my dreamhost server. The bash script 'new_gitrepo' should
+# be in the path of the remote server:
+#
+#    #!/bin/bash
+#    # Generate new git repo
+#    GIT_REPOS=$HOME/gitrepos
+#
+#    mkdir -p $GIT_REPOS/$1
+#    cd $GIT_REPOS/$1
+#    git init --bare
+#    
+#    echo "Return to your local directory and run:"
+#    echo "git_clone"
+# and the $REMOTE_GIT_REPO should be defined locally, something like:
+# REMOTE_GIT_REPO=<hotusername>@<host>:<pathtohomeonserver>/gitrepos
+
+function git_init {
+   BASENAME=`basename $PWD`
+   git init
+   git add *
+   git commit -m"Initial commit"
+   echo "Go to remote and run 'new_gitrepo $BASENAME'"
+   echo "Then return and write 'git_clone'"
+   unset BASENAME
+}
+
+function git_clone {
+   BASENAME=`basename $PWD`
+   git remote add origin $REMOTE_GIT_REPO/$BASENAME
+   git push -u origin master
+   unset BASENAME
+}
