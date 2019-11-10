@@ -2,6 +2,7 @@
 Utility to setup Hyper terminal and MacVim with same solarized theme. Includes Homebrew installation.
 
 * Homebrew
+
 Packet manager for non-standard mac applications
 Requires Xcode updated for current version of iOS
 The setup-mac script pulls in macvim and hyper etc.
@@ -11,11 +12,15 @@ Created and populated with additional modules
 the Hyper terminal application. These setups/plugins will be linked in
 from the user's homedir.
 
-* Hyper is a highly user-configurble terminal with a built-in plugin manager
+* Hyper 
+
+iHyper is a highly user-configurble terminal with a built-in plugin manager
 To customize hyper, start it, select Plugins > 'Install Hyper CLI command in PATH'
 and then write: 'hyper help'
 
-* MacVim (gvim) is set up with the Vundle plugin manager
+* MacVim (gvim) 
+
+is set up with the Vundle plugin manager
 The Fluor utility could be started to map the Mac's function keys to vim commands dirctly 
 The vimrc file contains some examples at the bottom
 
@@ -28,9 +33,10 @@ in this setup, so that the user can explore the possibilities and add more
 at her own discression.
 
 * Installation
-cd ~
-hg clone https://github.com/gaage/setup-mac .setup-mac
-.setup-mac/setup-mac
+
+		cd ~
+		hg clone https://github.com/gaage/setup-mac .setup-mac
+		.setup-mac/setup-mac
 
 The setup-mac-script should be reviewed before running it.
 It creates a number of links to the ~/.setup-mac directory,
