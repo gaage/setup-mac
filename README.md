@@ -50,3 +50,15 @@ directory, which may or may not correspond with setup you have from before.
 The .bash_profile link initializes the setup, and if you have
 a .bash_profile from before, you shuld try to merge your contents
 into ~/.setup-mac/bash_profile.
+
+Open the FonBook Mac app and install the IBM Plex mono font from the download
+in ~/.setup-mac/plex.
+
+# First test
+
+Start Hyper from App menu or Spotlight search.
+See comment under Hyper header above to customize hyper itself from the command line.
+
+Write gvim in the Hyper terminal.
+
+Enjoy.
