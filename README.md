@@ -18,13 +18,17 @@ from the user's homedir.
 
 Hyper is a highly user-configurble terminal with a built-in plugin manager
 To customize hyper, start it, select Plugins > 'Install Hyper CLI command in PATH'
-and then write: 'hyper help'
+and then write: 'hyper help'.
+Some nice settings are included in the bash_profile, aliases, variables and
+functions files that are linked in,
 
 ## MacVim (gvim) 
 
 is set up with the Vundle plugin manager
 The Fluor utility could be started to map the Mac's function keys to vim commands dirctly 
-The vimrc file contains some examples at the bottom
+The vimrc file contains some examples of keymappings at the bottom.
+The gvimrc ensures that your
+editor is styled like the hyper terminal.
 
 Both Hyper and MacVim is set up to use the solarized theme with the IBM Plex Mono font
 This should be downloded into ~/.setup-mac/plex, and must be added to the Mac's 
