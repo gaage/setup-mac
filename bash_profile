@@ -11,10 +11,15 @@ unset NM HI HII SI IN
 
 export EDITOR='gvim -f --nomru -c "au VimLeave * !open -a Terminal"'
  
-if [ "$TERM" != "dumb" ]; then
-    export LS_OPTIONS='--color=auto'
-    eval `gdircolors ~/.dir_colors`
-fi
+# source existing setup files    
+SETUP_MAC=$HOME/.setup-mac
+
+# source files in profile directory
+[ -e $SETUP_MAC/variables ] && source $SETUP_MAC/variables
+[ -e $SETUP_MAC/aliases   ] && source $SETUP_MAC/aliases
+[ -e $SETUP_MAC/functions ] && source $SETUP_MAC/functions
+
+eval `gdircolors ~/.dir_colors`
 
 # startup banner
 HOST=`hostname -s`
@@ -22,15 +27,6 @@ pyfiglet $USER@$HOST
 
 [ $PATH_ORIG ] || export PATH_ORIG=$PATH
 export PATH=$HOME/bin:$PATH_ORIG:$HOME/Library/Python/2.7/bin:.
-
-# source existing setup files    
-SETUP_MAC=$HOME/.setup-mac
-
-# source files in profile directory
-[ -e $SETUP_MAC/aliases   ] && source $SETUP_MAC/aliases
-[ -e $SETUP_MAC/functions ] && source $SETUP_MAC/functions
-[ -e $SETUP_MAC/variables ] && source $SETUP_MAC/variables
-
 
 umask 7
 bind -f ~/.inputrc

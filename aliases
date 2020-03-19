@@ -5,18 +5,14 @@ alias gvim="mvim $1"
 #Python homebrew
 alias python2=/usr/local/opt/python@2/bin/python2
 
-# Open macapps using 'open -a'
+# Open macapps from commandline using 'open -a'
 alias finder='open -a finder'
 alias fluor='open -a Fluor'
-
-# Useful ls aliases
-alias ls='gls $LS_OPTIONS -hF'
-alias ll='gls $LS_OPTIONS -lhF'
-alias l='gls $LS_OPTIONS -lAhF'
 
 # cd aliases
 alias ..="cd .."
 alias ...="cd ../.."
 alias sm='cd $HOME/.setup-mac'
 
-source $HOME/.aliases
+# Additional user aliases
+[ -e $HOME/.aliases ] && source $HOME/.aliases

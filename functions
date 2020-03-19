@@ -31,3 +31,23 @@ function git_clone {
    git push -u origin master
    unset BASENAME
 }
+
+# Useful ls overloads
+function ls {
+    if [ $USER = $(basename $PWD) ]; then
+        gls $LS_OPTIONS $LS_IGNORES -hF $1
+    else
+        gls $LS_OPTIONS -hF $1
+    fi
+}
+function ll {
+    if [ $USER = $(basename $PWD) ]; then
+        gls $LS_OPTIONS $LS_IGNORES -lhF $1     
+    else
+        gls $LS_OPTIONS -lhF $1
+    fi
+}
+function l {
+    gls $LS_OPTIONS -lAhF $1
+}
+

@@ -1,3 +1,7 @@
 
 
+# Set colors in ls listing, and ignore seldom used top-level dirs
+export LS_OPTIONS='--color=auto'
+export LS_IGNORES='--ignore Public --ignore Sites --ignore Movies --ignore Music --ignore Pictures'
+
 [ -e $HOME/.variables ] && source $HOME/.variables

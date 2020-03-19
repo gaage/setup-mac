@@ -1,5 +1,6 @@
 #!/bin/bash
 # File is mainained in ~/.setup-mac/setup-mac
+# Todo: include inputrc
 
 
 # Get Homebrew packet manager itself
