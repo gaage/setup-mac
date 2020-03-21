@@ -14,5 +14,9 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias sm='cd $HOME/.setup-mac'
 
-# Additional user aliases
+# Additional user aliases (with confidential contens?)
+# Like:
+# alias dhost='sshpass -p password ssh user@domain'
+# alias matlab='/Applications/MATLAB_R2019a.app/bin/matlab -nodesktop -nosplash'
+# alias dreamhost='ssh user@domain'
 [ -e $HOME/.aliases ] && source $HOME/.aliases
