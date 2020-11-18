@@ -27,6 +27,7 @@ function git_init {
 
 function git_clone {
    BASENAME=`basename $PWD`
+   echo "git remote add origin $REMOTE_GIT_REPO/$BASENAME"
    git remote add origin $REMOTE_GIT_REPO/$BASENAME
    git push -u origin master
    unset BASENAME
@@ -35,19 +36,19 @@ function git_clone {
 # Useful ls overloads
 function ls {
     if [ $USER = $(basename $PWD) ]; then
-        gls $LS_OPTIONS $LS_IGNORES -hF $1
+        gls $LS_OPTIONS $LS_IGNORES -h $1
     else
-        gls $LS_OPTIONS -hF $1
+        gls $LS_OPTIONS -h $1
     fi
 }
 function ll {
     if [ $USER = $(basename $PWD) ]; then
-        gls $LS_OPTIONS $LS_IGNORES -lhF $1     
+        gls $LS_OPTIONS $LS_IGNORES -lh $1     
     else
-        gls $LS_OPTIONS -lhF $1
+        gls $LS_OPTIONS -lh $1
     fi
 }
 function l {
-    gls $LS_OPTIONS -lAhF $1
+    gls $LS_OPTIONS -lAh $1
 }
 

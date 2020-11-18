@@ -48,7 +48,7 @@ Prerequisite: Install Xcode from AppStore.
 Then open the Mac's Terminal app, and run: 
 
 		cd ~
-		hg clone https://github.com/gaage/setup-mac .setup-mac
+		git clone https://github.com/gaage/setup-mac .setup-mac
 		.setup-mac/setup-mac
 
 The setup-mac-script should be reviewed before running it.  It creates a number
