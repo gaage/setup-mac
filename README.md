@@ -61,8 +61,6 @@ into ~/.setup-mac/bash_profile.
 Open the FonBook Mac app and install the IBM Plex mono font from the download
 in ~/.setup-mac/plex.
 
-Open gvim and run :PluginInstall to get the Vundle packages. Close it and restart.
-
 # First test
 
 Start Hyper from App menu or Spotlight search.
