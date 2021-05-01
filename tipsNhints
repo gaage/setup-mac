@@ -1,0 +1,20 @@
+# Collection of less and more known useful procedures and commands
+# Just to keep them somewhere
+
+#
+# How to Add SSH Public Key to Server
+#
+
+In the ~/.ssh directory, generate private and public keys:
+$ ssh-keygen -b 1024 -t rsa -f id_rsa 
+This may be done with or without giving a password.
+
+Add the private key to your local machine:
+$ ssh-add id_rsa
+(prompts you for the password, if you gave it)
+
+Add the public key to the remote node:
+$ ssh-copy-id -i ~/.ssh/id_rsa.pub user@67.67.67.67
+(prompts you for the remote node's password)
+
+
