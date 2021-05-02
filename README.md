@@ -7,7 +7,7 @@ Utility to setup Hyper terminal and MacVim with same solarized theme. Includes H
 
 Packet manager for non-standard mac applications
 Requires Xcode updated for current version of iOS
-The setup-mac script pulls in macvim and hyper etc.
+The setup-mac script pulls in macvim and hyper etc using this manager.
 
 Created and populated with additional modules
 ~/.setup-mac repo contains setup files for gvim (MacVim) and
@@ -30,6 +30,11 @@ you open gvim to install the plugins defined in the downloded vimrc.
 The Fluor utility could be started to map the Mac's function keys to vim commands dirctly 
 The vimrc file contains some examples of keymappings at the bottom.
 The gvimrc ensures that your editor is styled like the hyper terminal.
+
+## Other
+
+Added a solarized theme setup file for the native mac terminal also. With the IBM Plex
+font this is a good alternative if you want something simpler than Hyper.
 
 ## Font
 
@@ -58,7 +63,7 @@ The .bash_profile link initializes the setup, and if you have
 a .bash_profile from before, you shuld try to merge your contents
 into ~/.setup-mac/bash_profile.
 
-Open the FonBook Mac app and install the IBM Plex mono font from the download
+Open the FontBook Mac app and install the IBM Plex mono font from the download
 in ~/.setup-mac/plex.
 
 # First test

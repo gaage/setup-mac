@@ -8,6 +8,7 @@ alias python2=/usr/local/opt/python@2/bin/python2
 # Open macapps from commandline using 'open -a'
 alias finder='open -a finder'
 alias fluor='open -a Fluor'
+alias preview='open -a Preview $@'
 
 # cd aliases
 alias ..="cd .."

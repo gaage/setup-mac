@@ -13,7 +13,7 @@ else
 fi
 
 # Get Homebrew command-line and graphical utilities (via cask)
-HOMEBREW_MODULES="coreutils mercurial macvim sshpass"
+HOMEBREW_MODULES="coreutils macvim gh"
 HOMEBREW_CASKS="hyper fluor"
 
 for module in $HOMEBREW_MODULES; do
@@ -50,8 +50,6 @@ echo -e "* using the Mac's fontbook utility\n"
 [ -e $SETUP_MAC/plex ]      || git clone https://github.com/IBM/plex $SETUP_MAC/plex
 
 # Create links to files in this dir in $HOME
-# Require access to geinov@noven.no mercurial repo
-# If you have a zipped version, unzip it in ~/.mac_profile and comment out the next line
 ln -sf $SETUP_MAC/bash_profile $HOME/.bash_profile
 ln -sf $SETUP_MAC/vimrc $HOME/.vimrc
 ln -sf $SETUP_MAC/gvimrc $HOME/.gvimrc
