@@ -36,19 +36,8 @@ function git_clone {
 # Useful ls overloads
 function ls {
     if [ $USER = $(basename $PWD) ]; then
-        gls $LS_OPTIONS $LS_IGNORES -h $1
+        gls "${LS_OPTIONS[@]}" "${LS_IGNORES[@]}" -h $1
     else
-        gls $LS_OPTIONS -h $1
+        gls "${LS_OPTIONS[@]}" -h $1
     fi
 }
-function ll {
-    if [ $USER = $(basename $PWD) ]; then
-        gls $LS_OPTIONS $LS_IGNORES -lh $1     
-    else
-        gls $LS_OPTIONS -lh $1
-    fi
-}
-function l {
-    gls $LS_OPTIONS -lAh $1
-}
-

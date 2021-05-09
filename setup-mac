@@ -1,27 +1,34 @@
-#!/bin/bash
+#!/bin/zsh
 # File is mainained in ~/.setup-mac/setup-mac
 # Todo: include inputrc
 
+# Accept the license of xcode
+sudo xcodebuild -license accept
 
-# Get Homebrew packet manager itself
-BREW=/usr/local/bin/brew
+# Get Homebrew packet manager itself (assuming this install dir)
+BREW=/opt/homebrew/bin/brew
 if [ -e $BREW ]; then
    echo "* Homebrew is installed"
 else
    echo "* Installing Homebrew ..."
-   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+   sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+# Install the Oh My ZSH framework
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # Get Homebrew command-line and graphical utilities (via cask)
-HOMEBREW_MODULES="coreutils macvim gh"
+HOMEBREW_MODULES="coreutils macvim gh figlet"
 HOMEBREW_CASKS="hyper fluor"
 
-for module in $HOMEBREW_MODULES; do
-   brew install $module
+for module in $( echo "$HOMEBREW_MODULES" )
+do
+   $BREW install $module
 done
 
-for cask_module in $HOMEBREW_CASKS; do
-   brew cask install $cask_module
+for cask_module in $( echo "$HOMEBREW_CASKS" )
+do
+   $BREW install --cask $cask_module
 done
 
 echo -e "* To customize Hyper, start it, select Plugins > 'Install Hyper CLI command in PATH'"
@@ -50,9 +57,19 @@ echo -e "* using the Mac's fontbook utility\n"
 [ -e $SETUP_MAC/plex ]      || git clone https://github.com/IBM/plex $SETUP_MAC/plex
 
 # Create links to files in this dir in $HOME
-ln -sf $SETUP_MAC/bash_profile $HOME/.bash_profile
-ln -sf $SETUP_MAC/vimrc $HOME/.vimrc
-ln -sf $SETUP_MAC/gvimrc $HOME/.gvimrc
-ln -sf $SETUP_MAC/gitconfig $HOME/.gitconfig
+[ -e $HOME/.zshrc ] || ln -sf $SETUP_MAC/zshrc $HOME/.zshrc
+[ -e $HOME/.vimrc ] || ln -sf $SETUP_MAC/vimrc $HOME/.vimrc
+[ -e $HOME/.gvimrc ] || ln -sf $SETUP_MAC/gvimrc $HOME/.gvimrc
+[ -e $HOME/.gitconfig ] || ln -sf $SETUP_MAC/gitconfig $HOME/.gitconfig
 echo -e "* Open gvim and run :PluginInstall\n"
-ln -sf $SETUP_MAC/hyper.js $HOME/.hyper.js
+[ -e $HOME/.hyper.js ] || ln -sf $SETUP_MAC/hyper.js $HOME/.hyper.js
+
+
+if [ -e $HOME/.zshrc ];then
+if grep -iq "Added by setup-mac"  $HOME/.zshrc ; then
+   echo "Sourcing of setup-mac/zshrc added before"
+else
+   echo "Added sourcing of setup-mac/zshrc"
+   echo "source $HOME/.setup-mac/zshrc  # Added by setup-mac" >> $HOME/.zshrc
+fi
+fi
