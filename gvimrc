@@ -1,5 +1,5 @@
 
 " GUI look and feel
 set background=dark
-set guifont=IBMPlexMono:h14
+set guifont=IBMPlexMono-Text:h18
 colorscheme solarized

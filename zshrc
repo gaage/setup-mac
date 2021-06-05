@@ -11,7 +11,7 @@
 
 export EDITOR='gvim -f --nomru -c "au VimLeave * !open -a Terminal"'
 [ $PATH_ORIG ] || export PATH_ORIG=$PATH
-export PATH=$HOME/bin:$PATH_ORIG:$HOME/Library/Python/2.7/bin:.:/opt/homebrew/bin
+export PATH=/opt/homebrew/bin:$HOME/bin:$PATH_ORIG:$HOME/Library/Python/2.7/bin:.
  
 # source existing setup files    
 SETUP_MAC=$HOME/.setup-mac
@@ -21,7 +21,7 @@ SETUP_MAC=$HOME/.setup-mac
 [ -e $SETUP_MAC/aliases   ] && source $SETUP_MAC/aliases
 [ -e $SETUP_MAC/functions ] && source $SETUP_MAC/functions
 
-eval `gdircolors ~/.dir_colors`
+#eval `gdircolors ~/.dir_colors`
 
 # startup banner
 HOST=`hostname -s`
