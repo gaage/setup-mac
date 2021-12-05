@@ -32,12 +32,3 @@ function git_clone {
    git push -u origin master
    unset BASENAME
 }
-
-# Useful ls overloads
-function ls {
-    if [ $USER = $(basename $PWD) ]; then
-        /opt/homebrew/bin/gls  "${LS_OPTIONS[@]}" "${LS_IGNORES[@]}" $1
-    else
-        /opt/homebrew/bin/gls  "${LS_OPTIONS[@]}" $1
-    fi
-}

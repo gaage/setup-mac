@@ -4,6 +4,7 @@
 
 module.exports = {
   config: {
+
     // choose either `'stable'` for receiving highly polished,
     // or `'canary'` for less polished but more frequent updates
     updateChannel: 'stable',
@@ -12,7 +13,7 @@ module.exports = {
     fontSize: 18,
 
     // font family with optional fallbacks
-    fontFamily: 'IBMPlexMono, Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: 'IBMPlexMono, "Go Mono for Powerline", Meslo, "DejaVu Sans Mono"',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
@@ -116,7 +117,7 @@ module.exports = {
     bell: 'SOUND',
 
     // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
-    copyOnSelect: false,
+    copyOnSelect: true,
 
     // if `true` (without backticks and without quotes), hyper will be set as the default protocol client for SSH
     defaultSSHApp: true,

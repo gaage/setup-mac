@@ -21,10 +21,10 @@ SETUP_MAC=$HOME/.setup-mac
 [ -e $SETUP_MAC/aliases   ] && source $SETUP_MAC/aliases
 [ -e $SETUP_MAC/functions ] && source $SETUP_MAC/functions
 
-#eval `gdircolors ~/.dir_colors`
+eval `gdircolors ~/.dircolors`
 
 # startup banner
 HOST=`hostname -s`
-figlet "$USER@$HOST"
-
+unsetopt PROMPT_SP
+figlet $USER@$HOST
 umask 7

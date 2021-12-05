@@ -50,7 +50,7 @@ fi
 
 # Download github modules and link to homedir, if needed
 [ -e $SETUP_MAC/dircolors-solarized ] || git clone https://github.com/seebi/dircolors-solarized $SETUP_MAC/dircolors-solarized
-ln -sf $SETUP_MAC/dircolors-solarized/dircolors.ansi-light $HOME/.dir_colors
+ln -sf $SETUP_MAC/dircolors-solarized/dircolors.ansi-light $HOME/.dircolors
 
 echo -e "* Install the IBM Plex Mono font from '$SETUP_MAC/plex'"
 echo -e "* using the Mac's fontbook utility\n"
@@ -70,6 +70,8 @@ if grep -iq "Added by setup-mac"  $HOME/.zshrc ; then
    echo "Sourcing of setup-mac/zshrc added before"
 else
    echo "Added sourcing of setup-mac/zshrc"
-   echo "source $HOME/.setup-mac/zshrc  # Added by setup-mac" >> $HOME/.zshrc
+   echo "source $HOME/.setup-mac/zshrc  # Added by setup-mac" > $HOME/.zshrc_tmp
+   cat $HOME/.zshrc >> $HOME/.zshrc_tmp
+   mv $HOME/.zshrc_tmp $HOME/.zshrc
 fi
 fi
