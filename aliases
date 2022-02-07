@@ -12,6 +12,16 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias sm='cd $HOME/.setup-mac'
 
+# Connect to your favourite server
+# Don't use a password. Generate a passphrase-less SSH key and push it
+# to your server:
+# ssh-keygen -t rsa -b 2048     (leave password empty when prompted)
+# Copy your keys to the target server:
+# ssh-copy-id id@server            (requires server password)
+# alias myserver="ssh id@server"
+alias dhost="ssh geinov@noven.no"
+
+
 # Additional user aliases (with confidential contens?)
 # Like:
 # alias matlab='/Applications/MATLAB_R2019a.app/bin/matlab -nodesktop -nosplash'
