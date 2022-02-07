@@ -13,7 +13,7 @@ module.exports = {
     fontSize: 18,
 
     // font family with optional fallbacks
-    fontFamily: 'IBMPlexMono, "Go Mono for Powerline", Meslo, "DejaVu Sans Mono"',
+    fontFamily: 'IBMPlexMono, "Go Mono for Powerline", "DejaVu Sans Mono"',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',

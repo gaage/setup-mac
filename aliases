@@ -19,7 +19,9 @@ alias sm='cd $HOME/.setup-mac'
 # Copy your keys to the target server:
 # ssh-copy-id id@server            (requires server password)
 # alias myserver="ssh id@server"
-alias dhost="ssh geinov@noven.no"
+alias dreamhost="ssh geinov@noven.no"
+alias ottohost="ssh otto.local"
+alias minihost="ssh mini.local"
 
 
 # Additional user aliases (with confidential contens?)
