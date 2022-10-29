@@ -35,10 +35,12 @@ echo -e "* To customize Hyper, start it, select Plugins > 'Install Hyper CLI com
 echo -e "* and then write (e.g.): 'hyper help'\n"
 
 # Create gvim and pointer to _the_dir_this_file_is_in_ in $HOME
-SETUP_MAC=$HOME/.setup-mac
+GITHUB_DIR=$HOME/GitHub
 VIM_DIR=$HOME/.vim
+IBM_PLEX_DIR=$GITHUB_DIR/plex
+SETUP_MAC=$GITHUB_DIR/setup-mac
 
-for dir in $SETUP_MAC $VIM_DIR $VIM_DIR/swap; do
+for dir in $IBM_PLEX_DIR $GITHUB_DIR $SETUP_MAC $VIM_DIR $VIM_DIR/swap; do
     [ -e $dir ] || mkdir -vp $dir 
 done
 
@@ -49,12 +51,12 @@ if [ ! -e $VIM_DIR/bundle ]; then
 fi
 
 # Download github modules and link to homedir, if needed
-[ -e $SETUP_MAC/dircolors-solarized ] || git clone https://github.com/seebi/dircolors-solarized $SETUP_MAC/dircolors-solarized
-ln -sf $SETUP_MAC/dircolors-solarized/dircolors.ansi-light $HOME/.dircolors
+[ -e $GITHUB_DIR/dircolors-solarized ] || git clone https://github.com/seebi/dircolors-solarized $GITHUB_DIR/dircolors-solarized
+ln -sf $GITHUB_DIR/dircolors-solarized/dircolors.ansi-light $HOME/.dircolors
 
 echo -e "* Install the IBM Plex Mono font from '$SETUP_MAC/plex'"
 echo -e "* using the Mac's fontbook utility\n"
-[ -e $SETUP_MAC/plex ]      || git clone https://github.com/IBM/plex $SETUP_MAC/plex
+[ -e $IBM_PLEX_DIR ]      || git clone https://github.com/IBM/plex $IBM_PLEX_DIR
 
 # Create links to files in this dir in $HOME
 [ -e $HOME/.zshrc ] || ln -sf $SETUP_MAC/zshrc $HOME/.zshrc
