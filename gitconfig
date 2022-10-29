@@ -37,7 +37,7 @@
     insteadOf = "mout:"
 [core]
     excludesfile = ~/.gitignore_global
-    edtor = gvim -f
+    editor = /opt/homebrew/bin/mvim -f -c \"au VimLeave * !open -a hyper\" 
 [alias]
     ; show merge tree + commits info
     graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
