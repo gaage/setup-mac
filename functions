@@ -32,15 +32,3 @@ function git_clone {
    git push -u origin master
    unset BASENAME
 }
-<<<<<<< Updated upstream
-=======
-
-# Useful ls overloads
-function ls {
-    if [ $USER = $(basename $PWD) ]; then
-        /opt/homebrew/bin/gls  "${LS_OPTIONS[@]}" "${LS_IGNORES[@]}" $@
-    else
-        /opt/homebrew/bin/gls  "${LS_OPTIONS[@]}" $@
-    fi
-}
->>>>>>> Stashed changes

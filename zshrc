@@ -21,11 +21,7 @@ SETUP_MAC=$HOME/.setup-mac
 [ -e $SETUP_MAC/aliases   ] && source $SETUP_MAC/aliases
 [ -e $SETUP_MAC/functions ] && source $SETUP_MAC/functions
 
-<<<<<<< Updated upstream
 eval `gdircolors ~/.dircolors`
-=======
-eval `gdircolors ~/.dir_colors`
->>>>>>> Stashed changes
 
 # startup banner
 HOST=`hostname -s`

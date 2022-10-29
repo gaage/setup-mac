@@ -8,7 +8,6 @@ alias fluor='open -a Fluor'
 alias preview='open -a Preview $@'
 
 # cd aliases
-alias ls="gls --color=auto $@"
 alias ..="cd .."
 alias ...="cd ../.."
 alias sm='cd $HOME/.setup-mac'
@@ -27,7 +26,6 @@ alias minihost="ssh mini.local"
 
 # Additional user aliases (with confidential contens?)
 # Like:
-alias matlab='/Applications/MATLAB_R2021b.app/bin/matlab -nodesktop -nosplash'
-
+# alias matlab='/Applications/MATLAB_R2019a.app/bin/matlab -nodesktop -nosplash'
 # alias dreamhost='ssh user@domain'
 [ -e $HOME/.aliases ] && source $HOME/.aliases
