@@ -3,7 +3,3 @@
 # Set colors in ls listing, and ignore seldom used top-level dirs
 export LS_OPTIONS=(--color=auto)
 export LS_IGNORES=(--ignore Public --ignore Sites --ignore Movies --ignore Music --ignore Pictures)
-
-# Source variables with confidential contents, like
-# export REMOTE_GIT_REPO=user@domain:/home/user/gitrepos
-[ -e $HOME/.variables ] && source $HOME/.variables
